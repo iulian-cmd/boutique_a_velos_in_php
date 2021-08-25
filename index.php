@@ -45,11 +45,11 @@
         if ($_GET["page"] == "class") {
             include("class.php");
         }
-        if ($_GET["page"] == "classtwo") {
-            include("classtwo.php");
+        if ($_GET["page"] == "classe") {
+            include("classe.php");
         }
-        if ($_GET["page"] == "table") {
-            include("table.php");
+        if ($_GET["page"] == "clients") {
+            include("clients.php");
         }
     } else {
         include("accueil.php");

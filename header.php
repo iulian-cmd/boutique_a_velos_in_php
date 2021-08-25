@@ -48,6 +48,7 @@ if (isset($_GET['destroy'])){
     <?php 
     include("navbar.php"); 
     include("entete.php");
+    require ("classe.php");
     ?>
 </head>
 
