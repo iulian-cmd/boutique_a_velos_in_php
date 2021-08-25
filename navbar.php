@@ -22,6 +22,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="nav-link" href="index.php?page=ajoutpanier">Panier</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="index.php?page=clients">Clients</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link disabled" href="index.php?page=contact" tabindex="-1" aria-disabled="true">Contact</a>
         </li>
       </ul>

@@ -74,15 +74,17 @@ class Client {
     // definir les variables (et leur type) de la classe Client
     public int $idClient;
     public string $nomClient;
+    public string $imageClient;
     public string $adresseClient;
     public int $codePostal;
     public string $ville;
 
 // constructor Client
-    public function __construct(int $idClient, string $nomClient, string $adresseClient, int $codePostal, string $ville) 
+    public function __construct(int $idClient, string $nomClient, string $imageClient, string $adresseClient, int $codePostal, string $ville) 
     {
         $this->idClient=$idClient;
         $this->nomClient=$nomClient;
+        $this->imageClient=$imageClient;
         $this->adresseClient=$adresseClient;
         $this->codePostal=$codePostal;
         $this->ville=$ville;
@@ -96,6 +98,7 @@ class Client {
            <ul class="list-group" style="max-width: 25rem">
            <li class="list-group-item list-group-item-info"><strong>idClient:  </strong>'."$this->idClient".'</li>
            <li class="list-group-item list-group-item-warning"><strong>Nom Client:  </strong>'."$this->nomClient".'</li>
+           <li class="list-group-item list-group-item-warning"><strong>Image Client:  </strong>'."$this->imageClient".'</li>
            <li class="list-group-item list-group-item-info"><strong>Adresse Client: </strong>'."$this->adresseClient".'</li>'           
            .'<li class="list-group-item list-group-item-info"><strong>Poids: </strong>'."$this->codePostal".'</li>
            <li class="list-group-item list-group-item-info"><strong>Poids: </strong>'."$this->ville".' kgs</li>
