@@ -29,7 +29,6 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
         </li>
       </ul>
     </div>
-    <div>'.'<?php include("entete.php"); ?>'.'</div>
   </nav>
     
 <script>  $(".navbar-toggler").click(function () {

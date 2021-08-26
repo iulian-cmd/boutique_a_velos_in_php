@@ -143,3 +143,23 @@ function viderPanier($panier){
 
 
 ?>
+
+
+<?php 
+
+// j'ai créé une fonction pour se connecter a la BDD
+function pdoConnectMysql() {
+    // Update the details below with your MySQL details
+    $DATABASE_HOST = 'localhost:3307';
+    $DATABASE_USER = 'myself001';
+    $DATABASE_PASS = 'guraluimamata';
+    $DATABASE_NAME = 'boutique_a_velos';
+    try {
+    	return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+    } catch (PDOException $exception) {
+    	// If there is an error with the connection, stop the script and display the error.
+    	exit('Failed to connect to database!');
+    }
+}
+
+?>

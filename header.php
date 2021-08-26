@@ -1,5 +1,7 @@
-<?php session_start(); 
-if (isset($_GET['destroy'])){
+<?php 
+require ("classe.php");
+session_start(); 
+if (isset($_GET['index.php?page=destroy'])){
     session_destroy(); 
 }?>
 <!DOCTYPE html>
@@ -47,8 +49,7 @@ if (isset($_GET['destroy'])){
 
     <?php 
     include("navbar.php"); 
-    include("entete.php");
-    require ("classe.php");
+    
     
     ?>
 </head>
@@ -62,12 +63,7 @@ if (isset($_GET['destroy'])){
         <div> <img src="_images/cycliste.svg" width=50 height=50 alt="logo" />. . . . Boutique a Velos
         </div>
 </div>
-    <div class="entete">
-<?php 
-  // echo 'Vider panier';
-
-?>
-
+ 
 </div>
 
 </body>

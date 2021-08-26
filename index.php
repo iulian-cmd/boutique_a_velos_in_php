@@ -42,9 +42,6 @@
         if ($_GET["page"] == "ajoutpanier") {
             include("panier.php");
         }
-        if ($_GET["page"] == "class") {
-            include("class.php");
-        }
         if ($_GET["page"] == "classe") {
             include("classe.php");
         }

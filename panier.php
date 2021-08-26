@@ -1,41 +1,26 @@
-<div id="affiche_panier">
-    <div>
-    <?php
+<?php
 
-    // definir la variable panier qui a deux variable id et quantite
-    // elles sont recuperees du formulaire avec le $_POST
+// Si la session panier n'existe pas, alors on initie un objet panier à partir de la classe Panier.
+    if(!isset($_SESSION['panier'])) {
+        $_SESSION['panier'] = new Panier;
+        }
+        // var_dump($_SESSION['panier']);
 
-    if(isset($_POST['idArticle']))
-    {
-    $_SESSION['panier'][] = 
-    [
-        'id' => $_POST['idArticle'], 
-        'quantite' => $_POST['quantite']
-    ];
-    }
+    // Si l'idArticle reçu par le formulaire existe, alors on ajoute l'idArticle et la quantité de l'article du formulaire dans la session panier.
+    if(isset($_POST['idArticle'])){
+            $_SESSION['panier']->addPanier($_POST['idArticle'],$_POST['quantite']);
+        }
+        var_dump($_SESSION['panier']);
 
-    elseif(isset($_POST['effacer']) and isset($_SESSION['panier']))
-    {
-        viderPanier($_SESSION['panier']);
-        echo "Votre panier est vide";
-    }
+    $bdd = new PDO('mysql:host=localhost:3307;dbname=boutique_a_velos;charset=utf8', 'myself001', 'guraluimamata');
+      $reponse = $bdd->query('SELECT * FROM article WHERE idArticle = $idArticle'  );
+      $donnees = $reponse->fetch();
+        echo 'idArticle';
+    
 
-    // on verifie si le panier existe et on cherche avec le foreach les 
-    // elements du panier
+ 
 
-    if(isset($_SESSION['panier'])) {
-    foreach($_SESSION['panier'] as $panier){
-        ajoutpanier($panier['id'], $panier['quantite']); 
-        echo '<br />'; 
-        echo '<br />'; 
-    }
-    totalPanier($_SESSION['panier']);
-}
-?> </div>
-<div id="petit_menu_panier">
-    <?php 
-    echo '<form action="index.php?destroy" method="POST"><input type="submit" name="effacer" value="Effacer panier"></form>'
-    ;?>
-</div>
 
-</div>
+
+
+?>
